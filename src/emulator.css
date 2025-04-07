@@ -1,85 +1,112 @@
-:root {
-	--blue-color: #0f42a9;
-	--green-color: #32aa57;
-	--red-color: #de1a1a;
-	--white-color: #fff;
-	--black-color: #000;
-	--purple-color: #c22fbb;
-	--yellow-color: #e57e00;
-	--light-blue-color: #eff3f5;
-	--pink-color: #fceded;
-	--turquoise-color: #0096b6;
-	--gray-color: #858585;
+.label {
+	font: 400 16px / 24px "Lucida Console", Consolas, monoca, "Andale Mono", monospace;
+	white-space: pre;
+	color: var(--green-color);
 }
 
+.message {
+	font: 400 16px / 24px "Lucida Console", Consolas, monoca, "Andale Mono", monospace;
+	white-space: pre;
+	color: var(--red-color);
+}
+
+.field {
+	padding: 0;
+	padding-block: 0;
+	padding-inline: 0;
+	margin: 0;
+	outline-style: none;
+	outline: none;
+	font: 400 16px / 24px "Lucida Console", Consolas, monoca, "Andale Mono", monospace;
+	border: none;
+	border-bottom: 1px solid var(--green-color);
+	color: var(--green-color);
+	background-color: transparent;
+}
+
+.continuous {
+	padding: 0;
+	padding-block: 0;
+	padding-inline: 0;
+	margin: 0;
+	outline-style: none;
+	outline: none;
+	font: 400 16px / 24px "Lucida Console", Consolas, monoca, "Andale Mono", monospace;
+	border: none;
+	border-bottom: 1px solid var(--green-color);
+	color: var(--green-color);
+	background-color: transparent;
+	overflow: hidden;
+	resize: none;
+}
 
 .input-20-protected input {
 	background: var(--light-blue-color);
-	color: var(--black-color);
+	color: var(--white-color);
 }
 
 .output-21 {
 	border-radius: 3px;
 	background: var(--green-color);
-	color: var(--white-color);
+	color: var(--black-color);
 	text-decoration: none;
 }
 
 .input-21 input {
 	background: var(--green-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 .input-21-protected input {
 	background: var(--green-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 
 .output-22 {
 	border-radius: 3px;
-	color: var(--black-color);
+	color: var(--white-color);
 	text-decoration: none;
 	font-weight: bold;
 }
 
 .input-22 input {
-	color: var(--black-color);
+	color: var(--white-color);
 	font-weight: bold;
 }
 .input-22-protected input {
 	background: var(--light-blue-color);
-	color: var(--black-color);
+	color: var(--white-color);
 	font-weight: bold;
 }
 
 .output-23 {
 	border-radius: 3px;
-	background: var(--white-color);
-	color: var(--black-color);
+	background: var(--black-color);
+	color: var(--white-color);
 }
 
 .input-23 input {
-	background: var(--white-color);
-	color: var(--black-color);
+	background: var(--black-color);
+	color: var(--white-color);
 }
 .input-23-protected input {
-	background: var(--white-color);
-	color: var(--black-color);
+	background: var(--black-color);
+	color: var(--white-color);
 }
 
 .output-24 {
 	border-radius: 3px;
-	color: var(--black-color);
+	color: var(--white-color);
 	text-decoration: underline;
 	text-underline-position: under;
 	text-underline-offset: 3px;
 }
 
 .input-24 input {
-	color: var(--black-color);
+	color: var(--white-color);
 }
 .input-24-protected input {
 	background: var(--light-blue-color);
-	color: var(--black-color);
+	color: var(--white-color);
 }
 
 .output-25 {
@@ -105,7 +132,7 @@
 
 .output-26 {
 	border-radius: 3px;
-	color: var(--black-color);
+	color: var(--white-color);
 	text-decoration: underline;
 	text-underline-position: under;
 	text-underline-offset: 3px;
@@ -114,12 +141,12 @@
 
 .input-26 input {
 	font-weight: bold;
-	color: var(--black-color);
+	color: var(--white-color);
 }
 .input-26-protected input {
 	background: var(--light-blue-color);
 	font-weight: bold;
-	color: var(--black-color);
+	color: var(--white-color);
 }
 
 .output-27 {
@@ -137,14 +164,14 @@
 }
 
 .input-27 input {
-	caret-color: var(--black-color);
+	caret-color: var(--white-color);
 	color: transparent;
 }
 
 .input-27-protected input {
 	background: var(--light-blue-color);
-	color: var(--black-color);
-	caret-color: var(--black-color);
+	color: var(--white-color);
+	caret-color: var(--white-color);
 	color: transparent;
 	background-color: transparent;
 }
@@ -166,17 +193,17 @@
 .output-29 {
 	border-radius: 3px;
 	background: var(--red-color);
-	color: var(--white-color);
+	color: var(--black-color);
 	text-decoration: none;
 }
 
 .input-29 input {
 	background: var(--red-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 .input-29-protected input {
 	background: var(--red-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 
 .output-2A {
@@ -197,18 +224,18 @@
 .output-2B {
 	border-radius: 3px;
 	background: var(--red-color);
-	color: var(--white-color);
+	color: var(--black-color);
 	text-decoration: blink;
 }
 
 .input-2B input {
 	background: var(--red-color);
-	color: var(--white-color);
+	color: var(--black-color);
 	text-decoration: blink;
 }
 .input-2B-protected input {
 	background: var(--red-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 
 .output-2C {
@@ -229,18 +256,18 @@
 .output-2D {
 	border-radius: 3px;
 	background: var(--red-color);
-	color: var(--white-color);
+	color: var(--black-color);
 	text-decoration: none;
 }
 
 .input-2D input {
 	background: var(--red-color);
-	color: var(--white-color);
+	color: var(--black-color);
 	text-decoration: none;
 }
 .input-2D-protected input {
 	background: var(--red-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 
 .output-2E {
@@ -291,18 +318,18 @@
 .output-31 {
 	border-radius: 3px;
 	background: var(--turquoise-color);
-	color: var(--white-color);
+	color: var(--black-color);
 	text-underline-position: under;
 	text-underline-offset: 3px;
 }
 
 .input-31 input {
 	background: var(--turquoise-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 .input-31-protected input {
 	background: var(--turquoise-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 
 .output-32 {
@@ -323,18 +350,18 @@
 .output-33 {
 	border-radius: 3px;
 	background: var(--yellow-color);
-	color: var(--white-color);
+	color: var(--black-color);
 	text-underline-position: under;
 	text-underline-offset: 3px;
 }
 
 .input-33 input {
 	background: var(--yellow-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 .input-33-protected input {
 	background: var(--yellow-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 
 .output-34 {
@@ -356,7 +383,7 @@
 .output-35 {
 	border-radius: 3px;
 	background: var(--turquoise-color);
-	color: var(--white-color);
+	color: var(--black-color);
 	text-decoration: underline;
 	text-underline-position: under;
 	text-underline-offset: 3px;
@@ -364,11 +391,11 @@
 
 .input-35 input {
 	background: var(--turquoise-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 .input-35-protected input {
 	background: var(--turquoise-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 
 .output-36 {
@@ -420,17 +447,17 @@
 .output-39 {
 	border-radius: 3px;
 	background: var(--purple-color);
-	color: var(--white-color);
+	color: var(--black-color);
 	text-decoration: none;
 }
 
 .input-39 input {
 	background: var(--purple-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 .input-39-protected input {
 	background: var(--purple-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 
 .output-3A {
@@ -451,18 +478,18 @@
 .output-3B {
 	border-radius: 3px;
 	background: var(--blue-color);
-	color: var(--white-color);
+	color: var(--black-color);
 	text-decoration: none;
 }
 
 .input-3B input {
 	background: var(--blue-color);
-	color: var(--white-color);
+	color: var(--black-color);
 	text-decoration: none;
 }
 .input-3B-protected input {
 	background: var(--blue-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 
 .output-3C {
@@ -485,7 +512,7 @@
 .output-3D {
 	border-radius: 3px;
 	background: var(--purple-color);
-	color: var(--white-color);
+	color: var(--black-color);
 	text-decoration: underline;
 	text-underline-position: under;
 	text-underline-offset: 3px;
@@ -493,12 +520,12 @@
 
 .input-3D input {
 	background: var(--purple-color);
-	color: var(--white-color);
+	color: var(--black-color);
 	text-decoration: none;
 }
 .input-3D-protected input {
 	background: var(--purple-color);
-	color: var(--white-color);
+	color: var(--black-color);
 }
 
 .output-3E {
