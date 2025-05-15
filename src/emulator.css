@@ -2,12 +2,23 @@
 	font: 400 16px / 24px "Lucida Console", Consolas, monoca, "Andale Mono", monospace;
 	white-space: pre;
 	color: var(--green-color);
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
 }
 
 .message {
 	font: 400 16px / 24px "Lucida Console", Consolas, monoca, "Andale Mono", monospace;
 	white-space: pre;
 	color: var(--red-color);
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
+}
+.keys {
+	-webkit-user-select: none; /* Safari */
+	-ms-user-select: none; /* IE 10 and IE 11 */
+	user-select: none; /* Standard syntax */
 }
 
 .field {
@@ -40,7 +51,7 @@
 	resize: none;
 }
 
-.input-20-protected input {
+.input-20-protected {
 	background: var(--light-blue-color);
 	color: var(--white-color);
 }
@@ -52,11 +63,11 @@
 	text-decoration: none;
 }
 
-.input-21 input {
+.input-21 {
 	background: var(--green-color);
 	color: var(--black-color);
 }
-.input-21-protected input {
+.input-21-protected {
 	background: var(--green-color);
 	color: var(--black-color);
 }
@@ -65,17 +76,14 @@
 	border-radius: 3px;
 	color: var(--white-color);
 	text-decoration: none;
-	font-weight: bold;
 }
 
-.input-22 input {
+.input-22 {
 	color: var(--white-color);
-	font-weight: bold;
 }
-.input-22-protected input {
+.input-22-protected {
 	background: var(--light-blue-color);
 	color: var(--white-color);
-	font-weight: bold;
 }
 
 .output-23 {
@@ -84,27 +92,27 @@
 	color: var(--white-color);
 }
 
-.input-23 input {
+.input-23 {
 	background: var(--black-color);
 	color: var(--white-color);
 }
-.input-23-protected input {
+.input-23-protected {
 	background: var(--black-color);
 	color: var(--white-color);
 }
 
 .output-24 {
 	border-radius: 3px;
-	color: var(--white-color);
+	color: var(-green-color);
 	text-decoration: underline;
 	text-underline-position: under;
 	text-underline-offset: 3px;
 }
 
-.input-24 input {
-	color: var(--white-color);
+.input-24 {
+	color: var(-green-color);
 }
-.input-24-protected input {
+.input-24-protected {
 	background: var(--light-blue-color);
 	color: var(--white-color);
 }
@@ -118,14 +126,14 @@
 	text-underline-offset: 3px;
 }
 
-.input-25 input {
+.input-25 {
 	background: var(--pink-color);
 	color: var(--black-color);
 	text-decoration: underline solid var(--black-color);
 	text-underline-position: under;
 	text-underline-offset: 3px;
 }
-.input-25-protected input {
+.input-25-protected {
 	background: var(--pink-color);
 	color: var(--black-color);
 }
@@ -136,16 +144,13 @@
 	text-decoration: underline;
 	text-underline-position: under;
 	text-underline-offset: 3px;
-	font-weight: bold;
 }
 
-.input-26 input {
-	font-weight: bold;
+.input-26 {
 	color: var(--white-color);
 }
-.input-26-protected input {
+.input-26-protected {
 	background: var(--light-blue-color);
-	font-weight: bold;
 	color: var(--white-color);
 }
 
@@ -156,19 +161,20 @@
 	caret-color: transparent;
 }
 
-.output-27 input {
+.output-27 {
 	border: none;
 	text-decoration: none;
 	color: transparent;
 	caret-color: transparent;
 }
 
-.input-27 input {
-	caret-color: var(--white-color);
+.input-27 {
+	caret-color: transparent;
 	color: transparent;
+	
 }
 
-.input-27-protected input {
+.input-27-protected  {
 	background: var(--light-blue-color);
 	color: var(--white-color);
 	caret-color: var(--white-color);
@@ -182,10 +188,10 @@
 	text-decoration: none;
 }
 
-.input-28 input {
+.input-28 {
 	color: var(--red-color);
 }
-.input-28-protected input {
+.input-28-protected {
 	background: var(--light-blue-color);
 	color: var(--red-color);
 }
@@ -197,11 +203,11 @@
 	text-decoration: none;
 }
 
-.input-29 input {
+.input-29 {
 	background: var(--red-color);
 	color: var(--black-color);
 }
-.input-29-protected input {
+.input-29-protected {
 	background: var(--red-color);
 	color: var(--black-color);
 }
@@ -212,11 +218,11 @@
 	text-decoration: blink;
 }
 
-.input-2A input {
+.input-2A {
 	color: var(--red-color);
 	text-decoration: blink;
 }
-.input-2A-protected input {
+.input-2A-protected {
 	background: var(--light-blue-color);
 	color: var(--red-color);
 }
@@ -228,12 +234,12 @@
 	text-decoration: blink;
 }
 
-.input-2B input {
+.input-2B {
 	background: var(--red-color);
 	color: var(--black-color);
 	text-decoration: blink;
 }
-.input-2B-protected input {
+.input-2B-protected {
 	background: var(--red-color);
 	color: var(--black-color);
 }
@@ -244,11 +250,11 @@
 	text-decoration: none;
 }
 
-.input-2C input {
+.input-2C {
 	color: var(--red-color);
 	text-decoration: none;
 }
-.input-2C-protected input {
+.input-2C-protected {
 	background: var(--light-blue-color);
 	color: var(--red-color);
 }
@@ -260,12 +266,12 @@
 	text-decoration: none;
 }
 
-.input-2D input {
+.input-2D {
 	background: var(--red-color);
 	color: var(--black-color);
 	text-decoration: none;
 }
-.input-2D-protected input {
+.input-2D-protected {
 	background: var(--red-color);
 	color: var(--black-color);
 }
@@ -276,11 +282,11 @@
 	text-decoration: blink;
 }
 
-.input-2E input {
+.input-2E {
 	color: var(--red-color);
 	text-decoration: blink;
 }
-.input-2E-protected input {
+.input-2E-protected {
 	background: var(--light-blue-color);
 	color: var(--red-color);
 }
@@ -291,11 +297,11 @@
 	text-decoration: none;
 }
 
-.input-2F input {
+.input-2F {
 	color: var(--red-color);
 	text-decoration: none;
 }
-.input-2F-protected input {
+.input-2F-protected {
 	background: var(--light-blue-color);
 	color: var(--red-color);
 }
@@ -307,10 +313,10 @@
 	text-underline-offset: 3px;
 }
 
-.input-30 input {
+.input-30 {
 	color: var(--turquoise-color);
 }
-.input-30-protected input {
+.input-30-protected {
 	background: var(--light-blue-color);
 	color: var(--turquoise-color);
 }
@@ -323,11 +329,11 @@
 	text-underline-offset: 3px;
 }
 
-.input-31 input {
+.input-31 {
 	background: var(--turquoise-color);
 	color: var(--black-color);
 }
-.input-31-protected input {
+.input-31-protected {
 	background: var(--turquoise-color);
 	color: var(--black-color);
 }
@@ -339,10 +345,10 @@
 	text-underline-offset: 3px;
 }
 
-.input-32 input {
+.input-32 {
 	color: var(--yellow-color);
 }
-.input-32-protected input {
+.input-32-protected {
 	background: var(--light-blue-color);
 	color: var(--yellow-color);
 }
@@ -355,11 +361,11 @@
 	text-underline-offset: 3px;
 }
 
-.input-33 input {
+.input-33 {
 	background: var(--yellow-color);
 	color: var(--black-color);
 }
-.input-33-protected input {
+.input-33-protected {
 	background: var(--yellow-color);
 	color: var(--black-color);
 }
@@ -372,10 +378,10 @@
 	text-underline-offset: 3px;
 }
 
-.input-34 input {
+.input-34 {
 	color: var(--turquoise-color);
 }
-.input-34-protected input {
+.input-34-protected {
 	background: var(--light-blue-color);
 	color: var(--turquoise-color);
 }
@@ -389,11 +395,11 @@
 	text-underline-offset: 3px;
 }
 
-.input-35 input {
+.input-35 {
 	background: var(--turquoise-color);
 	color: var(--black-color);
 }
-.input-35-protected input {
+.input-35-protected {
 	background: var(--turquoise-color);
 	color: var(--black-color);
 }
@@ -406,10 +412,10 @@
 	text-underline-offset: 3px;
 }
 
-.input-36 input {
+.input-36 {
 	color: var(--yellow-color);
 }
-.input-36-protected input {
+.input-36-protected {
 	background: var(--light-blue-color);
 	color: var(--yellow-color);
 }
@@ -421,10 +427,10 @@
 	text-underline-offset: 3px;
 }
 
-.input-37 input {
+.input-37 {
 	color: var(--turquoise-color);
 }
-.input-37-protected input {
+.input-37-protected {
 	background: transparent;
 	color: var(--turquoise-color);
 }
@@ -435,11 +441,11 @@
 	text-decoration: none;
 }
 
-.input-38 input {
+.input-38 {
 	color: var(--purple-color);
 }
 
-.input-38-protected input {
+.input-38-protected {
 	background: var(--light-blue-color);
 	color: var(--purple-color);
 }
@@ -451,11 +457,11 @@
 	text-decoration: none;
 }
 
-.input-39 input {
+.input-39 {
 	background: var(--purple-color);
 	color: var(--black-color);
 }
-.input-39-protected input {
+.input-39-protected {
 	background: var(--purple-color);
 	color: var(--black-color);
 }
@@ -466,11 +472,11 @@
 	text-decoration: none;
 }
 
-.input-3A input {
+.input-3A {
 	color: var(--blue-color);
 	text-decoration: none;
 }
-.input-3A-protected input {
+.input-3A-protected {
 	background: var(--light-blue-color);
 	color: var(--blue-color);
 }
@@ -482,12 +488,12 @@
 	text-decoration: none;
 }
 
-.input-3B input {
+.input-3B {
 	background: var(--blue-color);
 	color: var(--black-color);
 	text-decoration: none;
 }
-.input-3B-protected input {
+.input-3B-protected {
 	background: var(--blue-color);
 	color: var(--black-color);
 }
@@ -500,11 +506,11 @@
 	text-underline-offset: 3px;
 }
 
-.input-3C input {
+.input-3C {
 	color: var(--purple-color);
 	text-decoration: none;
 }
-.input-3C-protected input {
+.input-3C-protected {
 	background: var(--light-blue-color);
 	color: var(--purple-color);
 }
@@ -518,12 +524,12 @@
 	text-underline-offset: 3px;
 }
 
-.input-3D input {
+.input-3D {
 	background: var(--purple-color);
 	color: var(--black-color);
 	text-decoration: none;
 }
-.input-3D-protected input {
+.input-3D-protected {
 	background: var(--purple-color);
 	color: var(--black-color);
 }
@@ -536,11 +542,11 @@
 	text-underline-offset: 3px;
 }
 
-.input-3E input {
+.input-3E {
 	color: var(--blue-color);
 	text-decoration: none;
 }
-.input-3E-protected input {
+.input-3E-protected {
 	background: var(--light-blue-color);
 	color: var(--blue-color);
 }
@@ -551,11 +557,11 @@
 	text-decoration: none;
 }
 
-.input-3F input {
+.input-3F {
 	color: var(--blue-color);
 	text-decoration: none;
 }
-.input-3F-protected input {
+.input-3F-protected {
 	background: var(--light-blue-color);
 	color: var(--blue-color);
 }

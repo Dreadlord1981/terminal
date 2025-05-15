@@ -120,42 +120,47 @@ class Terminal {
 		var n_prevHeight = i_self.inputData?.height || 24;
 
 		i_self.inputData = o_inputData;
-
-		if (n_prevHeight != o_inputData.height || b_resize) {
-			i_self.onResize(o_inputData);
+		
+		if(!b_resize) {
+			b_resize = i_self.handler.setConfig(o_inputData);
 		}
+		
+		if (n_prevHeight != o_inputData.height || b_resize) {
+			i_self.onResize();
+		}
+		else {
+			var i_screen = i_self.screen;
 
-		var i_screen = i_self.screen;
+			if (i_screen) {
+				
+				i_self.clearSreen();
 
-		if (i_screen) {
-			
-			i_self.clearSreen();
+				var a_labels = i_self.createLabels(o_inputData);
+				var a_fields = i_self.createFields(o_inputData);
+				var a_keys = i_self.createKeys(o_inputData);
+				var a_messages = i_self.createMessage(o_inputData);
 
-			var a_labels = i_self.createLabels(o_inputData);
-			var a_fields = i_self.createFields(o_inputData);
-			var a_keys = i_self.createKeys(o_inputData);
-			var a_messages = i_self.createMessage(o_inputData);
+				i_self.fields = a_fields;
 
-			i_self.fields = a_fields;
+				var a_results = a_fields.concat(a_labels, a_keys, a_messages);
+				a_results.push(i_self.createCursor(o_inputData));
 
-			i_screen.append(...a_labels);
-			i_screen.append(...a_fields);
-			i_screen.append(...a_keys);
-			i_screen.append(...a_messages);
-			
-			i_screen.append(i_self.createCursor(o_inputData));
+				i_screen.append(...a_results);
 
-			if (o_inputData.focus > 0 ) {
+				if (o_inputData.focus > 0 ) {
 
-				var i_focus = i_self.fields[o_inputData.focus -1];
+					var i_focus = i_self.fields[o_inputData.focus -1];
 
-				if (i_focus) {
-					i_focus.focus({
-						focusVisible: true
-					});
+					if (i_focus) {
+						i_focus.focus({
+							focusVisible: true
+						});
+					}
 				}
 			}
 		}
+
+		
 	}
 
 	createCursor(o_inputData) {
@@ -218,7 +223,7 @@ class Terminal {
 
 			var i_element = document.createElement("input");
 
-			let n_left = i_self.handler.getX(o_config.col - 1);
+			let n_left = i_self.handler.getX(o_config.col + (o_config.off || 0) - 1);
 			let n_top = i_self.handler.getY(o_config.lin - 1) + (n_plus * o_config.lin);
 			let n_width = i_self.handler.getWidth() * o_config.len;
 
@@ -283,7 +288,7 @@ class Terminal {
 
 			var i_element = document.createElement("SPAN");
 
-			let n_left = i_self.handler.getX(o_config.col -1);
+			let n_left = i_self.handler.getX(o_config.col + (o_config.off || 0) -1);
 			let n_top = i_self.handler.getY(o_config.lin - 1) + (n_plus * o_config.lin);
 
 			i_element.innerHTML = o_config.dta;
@@ -720,7 +725,7 @@ class Terminal {
 
 	onResize() {
 
-		var i_self = this;
+		var i_self = this
 		var i_screen = i_self.screen;
 		var i_handler = i_self.handler;
 		var o_config = i_handler.config;
@@ -742,8 +747,12 @@ class Terminal {
 		var n_linScale = o_config.linScale;
 
 		n_colScale = o_rect.width / n_screenWidth;
+		n_linScale = (o_rect.height / n_screenHeight) - 0.05;
 
-		n_linScale = o_rect.height / n_screenHeight;
+		if (o_inputData.width > 80) {
+			n_colScale = (o_inputData.width / 80) * ((o_rect.width / n_screenWidth) - 0.05);
+			n_linScale = (o_rect.height / n_screenHeight) - 0.05;
+		}
 
 		o_config.colScale = n_colScale;
 		o_config.linScale = n_linScale;
@@ -805,7 +814,9 @@ class Handler {
 			colWidth: n_width,
 			linHeight: n_height,
 			colScale: 1,
-			linScale: 1
+			linScale: 1,
+			screenWidth: 80,
+			screenHeight: 24
 		};
 
 		i_self.config = o_config;
@@ -1079,6 +1090,23 @@ class Handler {
 		});
 
 		return i_result;
+	}
+
+	setConfig(o_config) {
+
+		var i_self = this;
+		var b_resize = false;
+
+		if (o_config.width != i_self.config.screenWidth) {
+			i_self.config.screenWidth = o_config.width;
+			i_self.config.screenHeight = o_config.height;
+
+			i_self.config.screen.width = o_config.width * i_self.config.colWidth;
+			i_self.config.screen.height = o_config.height * i_self.config.linHeight;
+			b_resize = true;
+		}
+
+		return b_resize;
 	}
 }
 
